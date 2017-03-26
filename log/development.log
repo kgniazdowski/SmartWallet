@@ -1683,3 +1683,294 @@ Processing by CreditsController#index as HTML
 Completed 200 OK in 312ms (Views: 275.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2017-03-26 16:48:36 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (15.6ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (15.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 277ms (Views: 222.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/loans/1/delete" for ::1 at 2017-03-26 16:48:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/loans/1/delete"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (2174.0ms)
+Started GET "/" for ::1 at 2017-03-26 16:52:36 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (15.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 270ms (Views: 234.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:07:04 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (4.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (276.0ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x984fbe8>:0x8c03a78>):
+    12: 				<h5><%= loan.description %></h5>
+    13: 				<div>
+    14: 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+    15: 					<%= link_to "Spłać", post, :confirm => "Czy na pewno dług z Barto jest spłacony?", :method => :delete %>
+    16: 					<a href="/loans/1/delete" onclick="return confirm('Czy na pewno dług z Barto jest spłacony?')"class="btn btn-danger btn-xs">Spłać</a>
+    17: 				</div>
+    18: 			</div>
+  
+app/views/credits/index.html.erb:15:in `block in _app_views_credits_index_html_erb___627017005_73557228'
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___627017005_73557228'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1662.0ms)
+Started GET "/" for ::1 at 2017-03-26 17:12:21 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (264.1ms)
+Completed 500 Internal Server Error in 371ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `confirm' for #<#<Class:0x984fbe8>:0x98b5210>
+Did you mean?  config
+               config=):
+    12: 				<h5><%= loan.description %></h5>
+    13: 				<div>
+    14: 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+    15: 					<%= link_to "Spłać", "/loans/1/delete", data: {confirm => "Czy na pewno dług z Barto jest spłacony?"}, method: :delete %>
+    16: 					<a href="/loans/1/delete" onclick="return confirm('Czy na pewno dług z Barto jest spłacony?')"class="btn btn-danger btn-xs">Spłać</a>
+    17: 				</div>
+    18: 			</div>
+  
+app/views/credits/index.html.erb:15:in `block in _app_views_credits_index_html_erb___627017005_80063592'
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___627017005_80063592'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1774.7ms)
+Started GET "/" for ::1 at 2017-03-26 17:13:00 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (304.9ms)
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x984fbe8>:0x550cde8>):
+    12: 				<h5><%= loan.description %></h5>
+    13: 				<div>
+    14: 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+    15: 					<%= link_to "Spłać", post, :confirm => "Czy na pewno dług z Barto jest spłacony?", :method => :delete %>
+    16: 					<a href="/loans/1/delete" onclick="return confirm('Czy na pewno dług z Barto jest spłacony?')"class="btn btn-danger btn-xs">Spłać</a>
+    17: 				</div>
+    18: 			</div>
+  
+app/views/credits/index.html.erb:15:in `block in _app_views_credits_index_html_erb___627017005_44676264'
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___627017005_44676264'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1759.3ms)
+Started GET "/" for ::1 at 2017-03-26 17:15:24 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (6.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 391ms (Views: 361.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:17:20 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (17.4ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 244ms (Views: 216.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:18:58 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (4.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (8.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 256ms (Views: 213.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:19:35 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (5.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 281ms (Views: 248.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:19:41 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 260ms (Views: 225.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:19:50 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 278ms (Views: 231.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/loans/2" for ::1 at 2017-03-26 17:20:03 +0200
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for LoansController):
+  
+actionpack (5.0.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started GET "/" for ::1 at 2017-03-26 17:20:47 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (4.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (16.0ms)
+  Rendered credits/_navbar.html.erb (4.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 264ms (Views: 222.2ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/loans/2" for ::1 at 2017-03-26 17:20:57 +0200
+Processing by LoansController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qsF5fmifn/KAvqNMb4mG1HMjR75q7NAWDwlq8tWlLtVOlWBboTT5MfmidE5YspTCfqGJmX/aVVsuE8c68ktfwg==", "id"=>"2"}
+  [1m[36mLoan Load (4.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "loans" WHERE "loans"."id" = ?[0m  [["id", 2]]
+  [1m[35m (169.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 185ms (ActiveRecord: 173.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:20:58 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (4.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 352ms (Views: 259.1ms | ActiveRecord: 4.0ms)
+
+

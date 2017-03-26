@@ -18,6 +18,12 @@ class LoansController < ApplicationController
 		end
 	end
 
+	def destroy
+		@loan = Loan.find(params[:id])
+		@loan.destroy
+		redirect_to root_path
+	end
+
 	private
 
 	def loan_params

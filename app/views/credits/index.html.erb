@@ -12,6 +12,7 @@
 				<h5><%= loan.description %></h5>
 				<div>
 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+					<%= link_to "Spłać", loan, :class => "btn btn-danger btn-xs", :method => :delete, :data => {:confirm => "Czy na pewno dług z " + loan.name + " jest spłacony?"} %>
 				</div>
 			</div>
 		</div>
