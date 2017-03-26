@@ -1,16 +1,19 @@
-<div class="lead">
 	<% @loans.each do |loan| %>
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<h3><span class="label label-warning"><%= loan.amoung %> zł</span></h3>
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading"><%= loan.name %></h4>
-			<div>Dodano <%= time_ago_in_words loan.created_at %> temu</div>
-			<h5><%= loan.description %></h5>
+	<div class="lead well">
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<h3><span class="label label-warning"><%= loan.amoung %> zł</span></h3>
+				</a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading"><%= loan.name %></h4>
+				<div>Dodano <%= time_ago_in_words loan.created_at %> temu</div>
+				<h5><%= loan.description %></h5>
+				<div>
+					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<% end %>
-</div>

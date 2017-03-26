@@ -1,0 +1,21 @@
+<h2>Edytuj pożyczkę</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@loan) do |l| %>
+      <%= l.label :'Imię:' %>
+      <%= l.text_field :name, class: 'form-control' %>
+
+      <%= l.label :'Wysokość pożyczki:' %>
+      <%= l.text_field :amoung, class: 'form-control' %>
+
+      <%= l.label :'Data:' %>
+      <%= l.datetime_local_field :date, class: 'form-control' %>
+
+      <%= l.label :'Opis:', "Confirmation" %>
+      <%= l.text_area :description, class: 'form-control' %>
+
+      <%= l.submit "Zapisz", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
