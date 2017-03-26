@@ -1974,3 +1974,128 @@ Processing by CreditsController#index as HTML
 Completed 200 OK in 352ms (Views: 259.1ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/" for ::1 at 2017-03-26 17:28:39 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  Rendered credits/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Users/karol/Documents/Rails/mywallet/app/views/credits/index.html.erb:16: syntax error, unexpected '<', expecting ')'
+					<%= link_to "Spłać", loan, :...
+					 ^
+C:/Users/karol/Documents/Rails/mywallet/app/views/credits/index.html.erb:16: syntax error, unexpected ',', expecting ')'
+...ass => "btn btn-danger btn-xs", :method => :delete, :data =>...
+...                               ^):
+  
+app/views/credits/index.html.erb:16: syntax error, unexpected '<', expecting ')'
+app/views/credits/index.html.erb:16: syntax error, unexpected ',', expecting ')'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1894.7ms)
+Started GET "/" for ::1 at 2017-03-26 17:29:13 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (36.1ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Fixnum into String):
+    12: 				<h5><%= loan.description %></h5>
+    13: 				<div>
+    14: 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+    15: 					<%= link_to "Edytuj", "/loans/" + loan.id + "edit", :class => "btn btn-default btn-xs" %>
+    16: 					<%= link_to "Spłać", loan, :class => "btn btn-danger btn-xs", :method => :delete, :data => {:confirm => "Czy na pewno dług z " + loan.name + " jest spłacony?"} %>
+    17: 				</div>
+    18: 			</div>
+  
+app/views/credits/index.html.erb:15:in `+'
+app/views/credits/index.html.erb:15:in `block in _app_views_credits_index_html_erb___627017005_81461472'
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___627017005_81461472'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1883.1ms)
+Started GET "/" for ::1 at 2017-03-26 17:31:31 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (36.0ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Fixnum into String):
+    12: 				<h5><%= loan.description %></h5>
+    13: 				<div>
+    14: 					<a href="/loans/1/edit" class="btn btn-default btn-xs">Edytuj</a>
+    15: 					<%= link_to "Edytuj", "/loans/" + loan.id.to_i + "edit", :class => "btn btn-default btn-xs" %>
+    16: 					<%= link_to "Spłać", loan, :class => "btn btn-danger btn-xs", :method => :delete, :data => {:confirm => "Czy na pewno dług z " + loan.name + " jest spłacony?"} %>
+    17: 				</div>
+    18: 			</div>
+  
+app/views/credits/index.html.erb:15:in `+'
+app/views/credits/index.html.erb:15:in `block in _app_views_credits_index_html_erb___627017005_79931952'
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___627017005_79931952'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2052.1ms)
+Started GET "/" for ::1 at 2017-03-26 17:34:23 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 268ms (Views: 231.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/3/edit" for ::1 at 2017-03-26 17:34:36 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 251ms (Views: 216.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/3/edit" for ::1 at 2017-03-26 17:34:42 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (0.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 262ms (Views: 217.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-26 17:35:00 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (8.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 272ms (Views: 234.7ms | ActiveRecord: 0.0ms)
+
+
