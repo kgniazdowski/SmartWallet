@@ -1,5 +1,6 @@
 class CreditsController < ApplicationController
   def index
+  	@loanList = Loan.all
   end
 
   def create

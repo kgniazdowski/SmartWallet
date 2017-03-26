@@ -1,13 +1,15 @@
 <div class="lead">
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <h3><span class="label label-warning">30 zł</span></h3>
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Bartek</h4>
-    <h5>Na rower</h5>
-  </div>
-</div>
+	<% @loanList.each do |loan| %>
+	<div class="media">
+		<div class="media-left">
+			<a href="#">
+				<h3><span class="label label-warning"><%= loan.amoung %> zł</span></h3>
+			</a>
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading"><%= loan.name %></h4>
+			<h5><%= loan.description %></h5>
+		</div>
+	</div>
+	<% end %>
 </div>
