@@ -1,6 +1,6 @@
 class CreditsController < ApplicationController
   def index
-  	@loanList = Loan.all
+  	@loans = Loan.order(created_at: :desc).all
   end
 
   def create

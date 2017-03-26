@@ -5,23 +5,23 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Dodaj pożyczkę</h4>
       </div>
-      <%= form_for :credit, url: '/addCredit' do %>
+      <%= form_for :credit, url: '/loans' do %>
         <div class="modal-body">
           <div class="form-group">
             <label for="inputPersonName">Imię:</label>
-            <input type="text" class="form-control" id="inputPersonName" placeholder="Komu pożyczasz?" required>
+            <input type="text" name="loan[name]" class="form-control" id="inputPersonName" placeholder="Komu pożyczasz?" required>
           </div>
           <div class="form-group">
             <label for="inputAmount">Wysokość pożyczki:</label>
-            <input type="text" class="form-control" id="inputAmount" placeholder="Ile pożyczasz?" required>
+            <input type="text" name="loan[amoung]" class="form-control" id="inputAmount" placeholder="Ile pożyczasz?" required>
           </div>
           <div class="form-group">
             <label for="inputAmount">Data:</label>
-            <input type="datetime-local" class="form-control" id="inputDate" placeholder="Kiedy pożyczasz?" required>
+            <input type="datetime-local" name="loan[date]" class="form-control" id="inputDate" placeholder="Kiedy pożyczasz?" required>
           </div>
           <div class="form-group">
             <label for="inputDescription">Opis:</label>
-            <textarea class="form-control" id="inputDescription" placeholder="Na co pożyczasz?" required></textarea>
+            <textarea name="loan[description]" class="form-control" id="inputDescription" placeholder="Na co pożyczasz?" required></textarea>
           </div>
         </div>
         <div class="modal-footer">
