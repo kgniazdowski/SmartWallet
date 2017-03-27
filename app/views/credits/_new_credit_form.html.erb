@@ -22,6 +22,7 @@
           <div class="form-group">
             <label for="inputDescription">Opis:</label>
             <textarea name="loan[description]" class="form-control" id="inputDescription" placeholder="Na co pożyczasz?" required></textarea>
+            <input type="hidden" name="loan[user_id]" value="<%= session[:user_id] %>">
           </div>
         </div>
         <div class="modal-footer">

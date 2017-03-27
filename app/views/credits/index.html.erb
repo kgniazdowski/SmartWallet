@@ -1,18 +1,17 @@
-	<% @loans.each do |loan| %>
+	<% @loans.where(:user_id => session[:user_id]).each do |loan| %>
 	<div class="lead well">
 		<div class="media">
 			<div class="media-left">
 				<a href="#">
-					<h3><span class="label label-warning"><%= loan.amoung %> zł</span></h3>
+					<h3><span class="label label-primary"><%= loan.amoung %> zł</span></h3>
 				</a>
 			</div>
 			<div class="media-body">
-				<h4 class="media-heading"><%= loan.name %></h4>
-				<div>Dodano <%= time_ago_in_words loan.created_at %> temu</div>
+				<div class="media-heading"><%= loan.name %></div>
 				<h5><%= loan.description %></h5>
 				<div>
 					<%= link_to "Edytuj", "/loans/#{loan.id}/edit", :class => "btn btn-default btn-xs" %>
-					<%= link_to "Spłać", loan, :class => "btn btn-danger btn-xs", :method => :delete, :data => {:confirm => "Czy na pewno dług z " + loan.name + " jest spłacony?"} %>
+					<%= link_to "Spłać", loan, :class => "btn btn-warning btn-xs", :method => :delete, :data => {:confirm => "Czy na pewno dług z " + loan.name + " jest spłacony?"} %>
 				</div>
 			</div>
 		</div>

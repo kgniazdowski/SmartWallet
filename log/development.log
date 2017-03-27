@@ -2099,3 +2099,745 @@ Processing by CreditsController#index as HTML
 Completed 200 OK in 272ms (Views: 234.7ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170327185303)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170327185303"]]
+  [1m[35m (116.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/new" for ::1 at 2017-03-27 21:13:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (98.7ms)
+  Rendered users/new.html.erb within layouts/application (132.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 1505ms (Views: 1434.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-03-27 21:14:51 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RzRnLg2xwWW8xUkLkJ/pS0Clvek8I8ogQc6xvJSOad5r2gg3DpqkxLphh1ozzBV3QAW4W6Qluy3HhupFppxurw==", "user"=>{"first_name"=>"Kamil", "last_name"=>"Gniazdowski", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Kamil"], ["last_name", "Gniazdowski"], ["email", "kgniazdowski1@gmail.com"], ["password_digest", "$2a$10$l4.zk4M1ltfSsXqxNmBOxe4E2NiK2/4OzDE24GaalhzQR5TygJPGG"], ["created_at", 2017-03-27 19:14:51 UTC], ["updated_at", 2017-03-27 19:14:51 UTC]]
+  [1m[35m (115.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 276ms (ActiveRecord: 119.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-03-27 21:14:52 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 501ms (Views: 390.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-03-27 21:15:00 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 364ms (Views: 340.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/login" for ::1 at 2017-03-27 21:26:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (145.4ms)
+Completed 500 Internal Server Error in 459ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x48c9b10>:0x48c1d88>):
+    1: <h1>Log In</h1>
+    2: <%= form_tag sessions_path do %>
+    3: <div class="field">
+    4: <%= label_tag :email %><br>
+    5: <%= text_field_tag :email %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__285259593_38162832'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.8ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2137.5ms)
+Started GET "/login" for ::1 at 2017-03-27 21:30:24 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (33.3ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (0 for 1..2)):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for do %>
+    6:       <%= label :'Login:' %>
+    7:       <%= l.text_field :name, class: 'form-control' %>
+    8: 
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__285259593_65572284'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1807.9ms)
+Started GET "/login" for ::1 at 2017-03-27 21:31:44 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (4.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 921ms (Views: 886.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-27 21:36:21 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `call'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (36.2ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (90.1ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (3246.1ms)
+Started GET "/login" for ::1 at 2017-03-27 21:37:40 +0200
+  
+SyntaxError (C:/Users/karol/Documents/Rails/mywallet/app/controllers/sessions_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2181.8ms)
+Started GET "/login" for ::1 at 2017-03-27 21:38:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (C:/Users/karol/Documents/Rails/mywallet/app/controllers/sessions_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2188.3ms)
+Started GET "/login" for ::1 at 2017-03-27 21:40:36 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (4.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 645ms (Views: 560.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-27 21:46:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 708ms (Views: 662.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-03-27 21:48:28 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `call'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (2884.4ms)
+Started GET "/login" for ::1 at 2017-03-27 21:50:12 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (260.0ms)
+Completed 500 Internal Server Error in 406ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x492b8b0>:0xa2ffb40>):
+    1: <h1>Log In</h1>
+    2: <%= form_tag sessions_path do %>
+    3: <div class="field">
+    4: <%= label_tag :email %><br>
+    5: <%= text_field_tag :email %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__80009495_36834588'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1848.9ms)
+Started GET "/login" for ::1 at 2017-03-27 21:57:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 932ms (Views: 884.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-27 21:57:49 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VBripew7CLphdMOFbehnOTULHV8P6Nrewu1aCTKb5dt49I287xBtG2fQDdTOu5sFNasY7Zfuq9NEpQHwAIniqg==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 21:57:49 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (85.9ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.5ms)
+Completed 200 OK in 405ms (Views: 370.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 22:09:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (28.1ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 644ms (Views: 593.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToLoan (20170327201519)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "loans" ADD "user_id" integer[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170327201519"]]
+  [1m[35m (131.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-03-27 22:18:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (12.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 785ms (Views: 684.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:00:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (0.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (18.9ms)
+Completed 200 OK in 552ms (Views: 503.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:01:07 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zfhiWyM6UwXmpYAJdSosnA+EHGs5tFyhByI+nXzdkFbhFg1CIBE2pOABTljWedCgDyQZ2aGyLayBamVkTs+XJw==", "loan"=>{"name"=>"Karolcia", "amoung"=>"300", "date"=>"2017-03-25T01:01", "description"=>"Na zmywarkę"}, "user_id"=>{"{:value=>1}"=>""}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 300.0], ["date", Sat, 25 Mar 2017], ["description", "Na zmywarkę"], ["created_at", 2017-03-27 21:01:07 UTC], ["updated_at", 2017-03-27 21:01:07 UTC]]
+  [1m[35m (232.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 268ms (ActiveRecord: 249.7ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:01:08 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 268ms (Views: 227.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-27 23:01:33 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 280ms (Views: 245.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-27 23:01:46 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3yjHLwPembrvnr1D1C3GHvndUtExgU8hw24xI4oKx/Lzxqg2APX8G+k6cxJ3fjoi+X1XY6mHPixFJmrauBjAgw==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 329ms (Views: 229.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-27 23:01:54 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F0ifmwFWrsENx3zh4qyp8rHfj0mZ9TdfTCCMFr2Bctw7pvCCAn3LYAtjsrBB/1XOsX+K+wHzRlLKaNfvj5N1rQ==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:01:54 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.5ms)
+Completed 200 OK in 284ms (Views: 246.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:02:21 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zTxNrvWE7VuAF8J8N5BE1pAV0Lgss6APqw1pWCjXBw7h0iK39q+I+oazDC2Uw7jqkLXVCrS10QItRTKhGsUAfw==", "loan"=>{"name"=>"Karolcia", "amoung"=>"250", "date"=>"2017-03-24T01:02", "description"=>"Na kosmetyki"}, "user_id"=>{"{:value=>1}"=>""}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 250.0], ["date", Fri, 24 Mar 2017], ["description", "Na kosmetyki"], ["created_at", 2017-03-27 21:02:21 UTC], ["updated_at", 2017-03-27 21:02:21 UTC]]
+  [1m[35m (190.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 190.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:02:21 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.4ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 259ms (Views: 237.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "loans"[0m
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" ORDER BY "loans"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2017-03-27 23:06:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (1.4ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (32.6ms)
+  Rendered credits/_navbar.html.erb (0.5ms)
+  Rendered credits/_new_credit_form.html.erb (15.6ms)
+Completed 200 OK in 552ms (Views: 496.4ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:08:38 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (17.9ms)
+  Rendered credits/_navbar.html.erb (0.5ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 278ms (Views: 236.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" ORDER BY "loans"."id" ASC LIMIT ?[0m  [["LIMIT", 10]]
+Started GET "/" for ::1 at 2017-03-27 23:13:48 +0200
+Started GET "/" for ::1 at 2017-03-27 23:13:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mLoan Load (1.1ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (51.6ms)
+  Rendered credits/index.html.erb within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 691ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - C:/Users/karol/Documents/Rails/mywallet/tmp/cache/assets/sprockets/v3.0/rH/rHkj8z1kYzyt6Ds79AmgdHGliyTM6OU9fmxk2pZGj80.cache):
+     9: 
+    10: 	<%= csrf_meta_tags %>
+    11: 
+    12: 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    13: 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    14: </head>
+    15: 
+  
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__389706098_37476120'
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (10.0ms)
+Completed 200 OK in 1111ms (Views: 1022.9ms | ActiveRecord: 2.1ms)
+
+
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.2ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1620.2ms)
+Started GET "/" for ::1 at 2017-03-27 23:14:29 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (15.7ms)
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 284ms (Views: 244.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:15:00 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xH/dKIL2OeZzgK8MAysQ4KMQMZZOwBz2qZisU3moK8XokbIxgd1cR3UkYV2geOzco7A0JNbGbfsv0PeqS7ostA==", "loan"=>{"name"=>"Karolcia", "amoung"=>"10000", "date"=>"2017-03-23T01:01", "description"=>"Na bzdety"}, "user_id"=>{"{:value=>1}"=>""}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 10000.0], ["date", Thu, 23 Mar 2017], ["description", "Na bzdety"], ["created_at", 2017-03-27 21:15:00 UTC], ["updated_at", 2017-03-27 21:15:00 UTC]]
+  [1m[35m (210.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 237ms (ActiveRecord: 220.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:15:00 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (9.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.5ms)
+Completed 200 OK in 291ms (Views: 241.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" ORDER BY "loans"."id" ASC LIMIT ?[0m  [["LIMIT", 10]]
+Started GET "/" for ::1 at 2017-03-27 23:19:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (26.9ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (15.6ms)
+Completed 200 OK in 549ms (Views: 487.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:20:26 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/KSfOtZEBMOt26r8DE4OOs41mjlKHoTmat2pFmHpWOLQSvAj1W9hYqt/ZK2vHfIGzpWfi9IY9evslfLvU/tfkw==", "loan"=>{"name"=>"Karolcia", "amoung"=>"555", "date"=>"2017-03-24T01:01", "description"=>"na nic"}, "user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (39.7ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 555.0], ["date", Fri, 24 Mar 2017], ["description", "na nic"], ["created_at", 2017-03-27 21:20:26 UTC], ["updated_at", 2017-03-27 21:20:26 UTC]]
+  [1m[35m (204.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 268ms (ActiveRecord: 245.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:20:26 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.3ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 287ms (Views: 246.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:21:56 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J3U1qZsoHJy94OjEutGqO6/N2o42DSCXEYfrbXg4lS4Lm1qwmAN5PbtEJpUZglYHr23fPK4LUZqXz7CUSiqSXw==", "loan"=>{"name"=>"Karolcia", "amoung"=>"33", "date"=>"2017-03-25T01:01", "description"=>"Na czipsy"}, "user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 33.0], ["date", Sat, 25 Mar 2017], ["description", "Na czipsy"], ["created_at", 2017-03-27 21:21:56 UTC], ["updated_at", 2017-03-27 21:21:56 UTC]]
+  [1m[35m (238.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 253ms (ActiveRecord: 245.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:21:57 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (15.6ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (15.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 301ms (Views: 216.0ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:24:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (32.6ms)
+  Rendered credits/_navbar.html.erb (0.3ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 551ms (Views: 493.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:25:13 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Uyd1pKn4GTkYfy9Rxu4cv6XOjVEsh6fm4ugtjf1O37RovLPkYyFxeLFMuzkSERO/jc/h9y0b5Idw/tPBec8Dw==", "loan"=>{"name"=>"Karolcia", "amoung"=>"12", "date"=>"2017-03-23T01:01", "description"=>"Na papierosy", "user_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (38.9ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 12.0], ["date", Thu, 23 Mar 2017], ["description", "Na papierosy"], ["created_at", 2017-03-27 21:25:13 UTC], ["updated_at", 2017-03-27 21:25:13 UTC], ["user_id", 1]]
+  [1m[35m (200.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 274ms (ActiveRecord: 241.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:25:14 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (22.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 285ms (Views: 238.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:25:57 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.9ms)
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 277ms (Views: 243.5ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/loans/9" for ::1 at 2017-03-27 23:26:35 +0200
+Processing by LoansController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q4tkC107KD0bIMNqQnmHOzN/YZFpUNZhOoyfYPl6frxvZQsSXhBNnB2EDTvhKnsHM99kI/FWp2y8xMSZy2h5zQ==", "id"=>"9"}
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "loans" WHERE "loans"."id" = ?[0m  [["id", 9]]
+  [1m[35m (102.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 118ms (ActiveRecord: 103.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:26:36 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (3.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 266ms (Views: 226.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-27 23:27:24 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgKNrjoVOWyZLM+oPjXvt5WHiTdmCRCuQuLpIjF5PsFe7OK3OT5czZ+IAfmdZhOLlSeMhf4PYaPEqrLbA2s5sA==", "loan"=>{"name"=>"Karolcia", "amoung"=>"200", "date"=>"2017-03-27T01:01", "description"=>"Na buty", "user_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (25.2ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Karolcia"], ["amoung", 200.0], ["date", Mon, 27 Mar 2017], ["description", "Na buty"], ["created_at", 2017-03-27 21:27:24 UTC], ["updated_at", 2017-03-27 21:27:24 UTC], ["user_id", 1]]
+  [1m[35m (214.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 246ms (ActiveRecord: 239.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:27:24 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 291ms (Views: 244.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:30:09 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (2.1ms)
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 294ms (Views: 253.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:31:22 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (3.3ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 283ms (Views: 236.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:31:35 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.4ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.5ms)
+Completed 200 OK in 264ms (Views: 225.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/loans/10/edit" for ::1 at 2017-03-27 23:32:06 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (71.6ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 343ms (Views: 309.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/loans/10" for ::1 at 2017-03-27 23:32:09 +0200
+Processing by LoansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QMv2L/vUdd+5jbIF5jIsdejP3fbnmMh1SRSqJECC/477HhYQj3O5Ousr5/6nt3rSu9lGiO/OJnChVsPKqihJ2Q==", "loan"=>{"name"=>"Karolcia", "amoung"=>"200.0", "date"=>"2017-03-27T00:00:00", "description"=>"Na buty"}, "commit"=>"Zapisz", "id"=>"10"}
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 23:32:09 +0200
+Processing by CreditsController#index as HTML
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (0.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 276ms (Views: 240.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-27 23:33:15 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/new.html.erb within layouts/application (53.3ms)
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 312ms (Views: 278.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-03-27 23:33:25 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 261ms (Views: 228.4ms | ActiveRecord: 0.0ms)
+
+
