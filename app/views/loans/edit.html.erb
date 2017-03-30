@@ -4,16 +4,16 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@loan) do |l| %>
       <%= l.label :'Imię:' %>
-      <%= l.text_field :name, class: 'form-control' %>
+      <%= l.text_field :name, class: 'form-control' %><br>
 
       <%= l.label :'Wysokość pożyczki:' %>
-      <%= l.text_field :amoung, class: 'form-control' %>
+      <%= l.text_field :amoung, class: 'form-control' %><br>
 
       <%= l.label :'Data:' %>
-      <%= l.datetime_local_field :date, class: 'form-control' %>
+      <%= l.datetime_local_field :date, class: 'form-control' %><br>
 
-      <%= l.label :'Opis:', "Confirmation" %>
-      <%= l.text_area :description, class: 'form-control' %>
+      <%= l.label :'Opis:' %>
+      <%= l.text_area :description, class: 'form-control' %><br>
 
       <%= l.submit "Zapisz", class: "btn btn-primary" %>
     <% end %>
