@@ -3983,3 +3983,497 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 175ms (Views: 155.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-03-31 13:00:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 13:00:06 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.5ms)
+  Rendered credits/_new_credit_form.html.erb (1.5ms)
+Completed 200 OK in 661ms (Views: 638.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 13:00:57 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Hixk6ZNC6XUP3Hkl6vyvKTOxunj2+UBvt0NrN7PwlQWDbyjmxwynOx3IuCDnGl9Xb5nvxreRxB++uh5u5GzAQ==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 13:00:57 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (7.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 170ms (Views: 134.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 13:01:38 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.5ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 195ms (Views: 165.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 13:01:50 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  [1m[36mCACHE (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 225ms (Views: 186.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 13:02:02 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.5ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 240ms (Views: 197.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:31:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (2.0ms)
+Completed 200 OK in 545ms (Views: 500.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 15:32:01 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:32:01 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 15:32:01 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 318ms (Views: 277.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 15:32:08 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xhkHtr017R6RODK5W7PgGRSv9R3m47mkJMm+iaQnHv2jeQGmYz2OlJaJmi6UKcMA9fhqUYTUaJCsuIC2mlx9Sw==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:32:08 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 182ms (Views: 160.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:36:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 15:36:39 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 218ms (Views: 201.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 15:36:48 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UnZhBEGhqBK5dCACxpplrOdyF+g4VVfc2rErFMwzjvAKLtrp86VrBSjBwaos/xp4TV7n2vngD126cUBk9627ew==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:36:48 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (4.6ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 319ms (Views: 273.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:37:34 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.3ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 154.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:37:36 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 252ms (Views: 214.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:37:56 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (7.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (5.1ms)
+  Rendered credits/_new_credit_form.html.erb (2.0ms)
+Completed 200 OK in 442ms (Views: 375.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 15:38:34 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:38:35 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 15:38:35 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (4.0ms)
+Completed 200 OK in 345ms (Views: 288.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 15:48:55 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SzgmzJbPIXi1n5tHpHi4a5gw6MwSJRs5ZBF16n+OxUxGvJzSHq5AUJRr9+L15bBRKmP90uj/+tLZEhxiEHKNNA==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:48:55 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (4.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 156ms (Views: 136.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/10/edit" for ::1 at 2017-03-31 15:49:37 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (70.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 217ms (Views: 199.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 15:49:47 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 15:49:47 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 15:49:47 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 165ms (Views: 144.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLoans (20170326101049)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "amoung" float NOT NULL, "date" date NOT NULL, "description" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170326101049"]]
+  [1m[35m (20.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170327185303)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170327185303"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToLoan (20170327201519)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "loans" ADD "user_id" integer[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170327201519"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-31 14:09:03 UTC], ["updated_at", 2017-03-31 14:09:03 UTC]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-03-31 16:09:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 16:09:52 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 432ms (Views: 398.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-31 16:09:56 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsersController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/users_controller.rb:2)
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (27.2ms)
+  Rendered users/new.html.erb within layouts/application (42.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.9ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 201ms (Views: 179.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-03-31 16:10:13 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FxOrmZklzpXX1hCZjS/N1xmMdSc0kpYUS6oyoWnljf4kG4numAIF9ytGUM7uWNzzJLoFoL9TF62oJc7pQmDKAQ==", "user"=>{"first_name"=>"Kamil", "last_name"=>"Gniazdowski", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (19.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.3ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 286ms (Views: 172.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-03-31 16:10:27 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZIqDHmpQ7TgJ66rciYwE07+k0Pd+E+h/U3qVCh8IK7uC/44uVwHUATGj+didu58SRtRxoYcWSm6TXXDfelZa7g==", "user"=>{"first_name"=>"Kamil", "last_name"=>"Gniazdowski", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Kamil"], ["last_name", "Gniazdowski"], ["email", "kgniazdowski1@gmail.com"], ["password_digest", "$2a$10$56NU.yfdMsHupSSeHCM4A.8Who2thimas6LCsvDULka0QjIyXQONi"], ["created_at", 2017-03-31 14:10:27 UTC], ["updated_at", 2017-03-31 14:10:27 UTC]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 101ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-03-31 16:10:27 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 148.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 16:10:38 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.3ms)
+  Rendered credits/_new_credit_form.html.erb (1.5ms)
+Completed 200 OK in 182ms (Views: 155.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-03-31 16:11:14 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E0FilkXclwl8KcZMFooTZQpA289DCgzwRlOrP+xl16V5h6s7oKiQh68ktlD119EhxfxcXIIOUJAy6qWA+66FGQ==", "loan"=>{"name"=>"Dawid", "amoung"=>"10", "date"=>"31-03-2017", "description"=>"Na drobne wydatki", "user_id"=>"1"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dawid"], ["amoung", 10.0], ["date", Fri, 31 Mar 2017], ["description", "Na drobne wydatki"], ["created_at", 2017-03-31 14:11:14 UTC], ["updated_at", 2017-03-31 14:11:14 UTC], ["user_id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 16:11:14 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.8ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 272ms (Views: 250.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 16:12:04 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 16:12:04 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 16:12:04 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (4.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 167ms (Views: 148.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 16:12:09 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"biiQqKL5DJ+5n+p+/SYKXOUnkt9vln27tqjm5ao6TKYLSJa4fPFvFb4uQukyvClFBHANkw2hrI8+2djalEEvEA==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 16:12:09 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 160ms (Views: 139.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 16:12:12 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 16:12:12 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 16:12:12 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 156ms (Views: 137.5ms | ActiveRecord: 0.0ms)
+
+
