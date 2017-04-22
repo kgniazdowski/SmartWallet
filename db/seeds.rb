@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Loan.destroy_all
+
+File.open("db/smartWalletData.txt", "r") do |f|
+  f.each_line do |line|
+    name, amoung, date, description = line.chomp.split(";")
+    Loan.create!(:name => name, :amoung => amoung, :date => date, :description => description, :user_id => 1)
+  end
+end

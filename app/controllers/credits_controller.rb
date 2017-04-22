@@ -1,6 +1,10 @@
 class CreditsController < ApplicationController
   def index
-  	@loans = Loan.order(created_at: :desc).all
+  	if params[:search]
+  		@loans = Loan.search(params[:search]).order(created_at: :desc)
+  	else
+  		@loans = Loan.order(created_at: :desc).all
+  	end
   end
 
   def create

@@ -4498,3 +4498,1767 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 382ms (Views: 364.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-03-31 20:36:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 20:36:58 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 401ms (Views: 382.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-31 20:37:14 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:UsersController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/users_controller.rb:2)
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (35.1ms)
+  Rendered users/new.html.erb within layouts/application (58.2ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 348ms (Views: 292.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2017-03-31 20:37:37 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"beuTluMtINp80AjasxFV/kL0XW4Zn80rLa9zNZfXQZaBe7cRw2q/A8AvaCqkXyj4kkl955oTCr1VZf9gVIycsg==", "user"=>{"first_name"=>"Jacek", "last_name"=>"Gniazdowski", "email"=>"gniazdol7@wp.pl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gniazdol7@wp.pl"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jacek"], ["last_name", "Gniazdowski"], ["email", "gniazdol7@wp.pl"], ["password_digest", "$2a$10$C/XpbC8HK.z4RNK2MGECMOIPkWTkDhNc16scg4MAFWVjWYcOgBnde"], ["created_at", 2017-03-31 18:37:37 UTC], ["updated_at", 2017-03-31 18:37:37 UTC]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 136ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 20:37:37 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 20:37:37 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 231ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-03-31 20:37:49 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmSNQp8d3fBVm2o0OaAPx1Uchx5DBt2uZ569wKIWi8ATivhHFGk726W+wtacJ2jxneMkRfBzPcMg/fV9IU3A+Q==", "email"=>"gniazdol7@wp.pl", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gniazdol7@wp.pl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 20:37:49 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 2]]
+  Rendered credits/index.html.erb within layouts/application (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 188ms (Views: 162.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-03-31 20:37:52 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 20:37:52 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-03-31 20:37:52 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 184ms (Views: 165.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "loans"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "loans" WHERE "loans"."id" = ?[0m  [["id", 1]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 4507.0], ["date", Mon, 29 Feb 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 3786.0], ["date", Tue, 01 Mar 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 4625.0], ["date", Wed, 02 Mar 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 1970.0], ["date", Thu, 03 Mar 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 3267.0], ["date", Fri, 04 Mar 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 562.0], ["date", Sat, 05 Mar 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 1555.0], ["date", Sun, 06 Mar 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 1761.0], ["date", Mon, 07 Mar 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 1198.0], ["date", Tue, 08 Mar 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 2305.0], ["date", Wed, 09 Mar 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 2945.0], ["date", Thu, 10 Mar 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 4434.0], ["date", Fri, 11 Mar 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 4698.0], ["date", Sat, 12 Mar 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 120.0], ["date", Sun, 13 Mar 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 1408.0], ["date", Mon, 14 Mar 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 2031.0], ["date", Tue, 15 Mar 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 2385.0], ["date", Wed, 16 Mar 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 2436.0], ["date", Thu, 17 Mar 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 1182.0], ["date", Fri, 18 Mar 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 1693.0], ["date", Sat, 19 Mar 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (21.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 3467.0], ["date", Sun, 20 Mar 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 4679.0], ["date", Mon, 21 Mar 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 2080.0], ["date", Tue, 22 Mar 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 2599.0], ["date", Wed, 23 Mar 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 500.0], ["date", Thu, 24 Mar 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 3092.0], ["date", Fri, 25 Mar 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 4022.0], ["date", Sat, 26 Mar 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 4619.0], ["date", Sun, 27 Mar 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 3361.0], ["date", Mon, 28 Mar 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 4436.0], ["date", Tue, 29 Mar 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (20.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 2712.0], ["date", Wed, 30 Mar 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 131.0], ["date", Thu, 31 Mar 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 4341.0], ["date", Fri, 01 Apr 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 1690.0], ["date", Sat, 02 Apr 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 1011.0], ["date", Sun, 03 Apr 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 3123.0], ["date", Mon, 04 Apr 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:34 UTC], ["updated_at", 2017-04-21 21:31:34 UTC], ["user_id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 210.0], ["date", Tue, 05 Apr 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 422.0], ["date", Wed, 06 Apr 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 1559.0], ["date", Thu, 07 Apr 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 3271.0], ["date", Fri, 08 Apr 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 4030.0], ["date", Sat, 09 Apr 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 3680.0], ["date", Sun, 10 Apr 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 4160.0], ["date", Mon, 11 Apr 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 2690.0], ["date", Tue, 12 Apr 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 510.0], ["date", Wed, 13 Apr 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 4711.0], ["date", Thu, 14 Apr 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 4113.0], ["date", Fri, 15 Apr 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 1535.0], ["date", Sat, 16 Apr 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (20.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 1282.0], ["date", Sun, 17 Apr 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 2706.0], ["date", Mon, 18 Apr 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 2932.0], ["date", Tue, 19 Apr 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 371.0], ["date", Wed, 20 Apr 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 4902.0], ["date", Thu, 21 Apr 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 3564.0], ["date", Fri, 22 Apr 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 1256.0], ["date", Sat, 23 Apr 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 1729.0], ["date", Sun, 24 Apr 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 181.0], ["date", Mon, 25 Apr 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 3974.0], ["date", Tue, 26 Apr 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 4118.0], ["date", Wed, 27 Apr 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 1864.0], ["date", Thu, 28 Apr 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 1168.0], ["date", Fri, 29 Apr 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 935.0], ["date", Sat, 30 Apr 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 3976.0], ["date", Sun, 01 May 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 3533.0], ["date", Mon, 02 May 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 1540.0], ["date", Tue, 03 May 2016], ["description", "Na płyty CD"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 277.0], ["date", Wed, 04 May 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 4689.0], ["date", Thu, 05 May 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 2161.0], ["date", Fri, 06 May 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 3386.0], ["date", Sat, 07 May 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 3480.0], ["date", Sun, 08 May 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 4702.0], ["date", Mon, 09 May 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 4469.0], ["date", Tue, 10 May 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 2438.0], ["date", Wed, 11 May 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 2567.0], ["date", Thu, 12 May 2016], ["description", "Na płyty CD"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 4713.0], ["date", Fri, 13 May 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 1559.0], ["date", Sat, 14 May 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (25.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 1810.0], ["date", Sun, 15 May 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 2073.0], ["date", Mon, 16 May 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 249.0], ["date", Tue, 17 May 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 2835.0], ["date", Wed, 18 May 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 1920.0], ["date", Thu, 19 May 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 4425.0], ["date", Fri, 20 May 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 2812.0], ["date", Sat, 21 May 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 1286.0], ["date", Sun, 22 May 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 2200.0], ["date", Mon, 23 May 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 588.0], ["date", Tue, 24 May 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 3268.0], ["date", Wed, 25 May 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (19.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 1383.0], ["date", Thu, 26 May 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 1505.0], ["date", Fri, 27 May 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 4414.0], ["date", Sat, 28 May 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 2827.0], ["date", Sun, 29 May 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 1808.0], ["date", Mon, 30 May 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 3194.0], ["date", Tue, 31 May 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 1093.0], ["date", Wed, 01 Jun 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 2976.0], ["date", Thu, 02 Jun 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 2626.0], ["date", Fri, 03 Jun 2016], ["description", "Na płyty CD"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 4042.0], ["date", Sat, 04 Jun 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (21.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 1805.0], ["date", Sun, 05 Jun 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 2310.0], ["date", Mon, 06 Jun 2016], ["description", "Na jedzenie"], ["created_at", 2017-04-21 21:31:35 UTC], ["updated_at", 2017-04-21 21:31:35 UTC], ["user_id", 1]]
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 4618.0], ["date", Tue, 07 Jun 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 2469.0], ["date", Wed, 08 Jun 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 2570.0], ["date", Thu, 09 Jun 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 1992.0], ["date", Fri, 10 Jun 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 1276.0], ["date", Sat, 11 Jun 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 258.0], ["date", Sun, 12 Jun 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 472.0], ["date", Mon, 13 Jun 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 4103.0], ["date", Tue, 14 Jun 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 1701.0], ["date", Wed, 15 Jun 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 253.0], ["date", Thu, 16 Jun 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 3318.0], ["date", Fri, 17 Jun 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 2751.0], ["date", Sat, 18 Jun 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 2165.0], ["date", Sun, 19 Jun 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 3492.0], ["date", Mon, 20 Jun 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 3208.0], ["date", Tue, 21 Jun 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 1352.0], ["date", Wed, 22 Jun 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 2132.0], ["date", Thu, 23 Jun 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 3886.0], ["date", Fri, 24 Jun 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 2771.0], ["date", Sat, 25 Jun 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 1212.0], ["date", Sun, 26 Jun 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 1987.0], ["date", Mon, 27 Jun 2016], ["description", "Na meble"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 4467.0], ["date", Tue, 28 Jun 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 2819.0], ["date", Wed, 29 Jun 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 4731.0], ["date", Thu, 30 Jun 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (19.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 774.0], ["date", Fri, 01 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 2271.0], ["date", Sat, 02 Jul 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 2417.0], ["date", Sun, 03 Jul 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 4647.0], ["date", Mon, 04 Jul 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 862.0], ["date", Tue, 05 Jul 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 280.0], ["date", Wed, 06 Jul 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 123.0], ["date", Thu, 07 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 1110.0], ["date", Fri, 08 Jul 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 2319.0], ["date", Sat, 09 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 517.0], ["date", Sun, 10 Jul 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 2858.0], ["date", Mon, 11 Jul 2016], ["description", "Na mandat"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 4833.0], ["date", Tue, 12 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 1945.0], ["date", Wed, 13 Jul 2016], ["description", "Na samochod"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 3477.0], ["date", Thu, 14 Jul 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 2612.0], ["date", Fri, 15 Jul 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 409.0], ["date", Sat, 16 Jul 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 2275.0], ["date", Sun, 17 Jul 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 4945.0], ["date", Mon, 18 Jul 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 2044.0], ["date", Tue, 19 Jul 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 1315.0], ["date", Wed, 20 Jul 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 3892.0], ["date", Thu, 21 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 4957.0], ["date", Fri, 22 Jul 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 131.0], ["date", Sat, 23 Jul 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 3089.0], ["date", Sun, 24 Jul 2016], ["description", "Na bzdury"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 2785.0], ["date", Mon, 25 Jul 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 121.0], ["date", Tue, 26 Jul 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 4828.0], ["date", Wed, 27 Jul 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 3033.0], ["date", Thu, 28 Jul 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 1613.0], ["date", Fri, 29 Jul 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 1721.0], ["date", Sat, 30 Jul 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 3377.0], ["date", Sun, 31 Jul 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 4936.0], ["date", Mon, 01 Aug 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 3851.0], ["date", Tue, 02 Aug 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 3296.0], ["date", Wed, 03 Aug 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 1335.0], ["date", Thu, 04 Aug 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 4925.0], ["date", Fri, 05 Aug 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 230.0], ["date", Sat, 06 Aug 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jefferson Coats"], ["amoung", 3039.0], ["date", Sun, 07 Aug 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:36 UTC], ["updated_at", 2017-04-21 21:31:36 UTC], ["user_id", 1]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ossie Moler"], ["amoung", 3334.0], ["date", Mon, 08 Aug 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zachariah Herrod"], ["amoung", 1188.0], ["date", Tue, 09 Aug 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galen Fabiano"], ["amoung", 3960.0], ["date", Wed, 10 Aug 2016], ["description", "Na teatr"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernarda Curran"], ["amoung", 1657.0], ["date", Thu, 11 Aug 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donnell Gesell"], ["amoung", 218.0], ["date", Fri, 12 Aug 2016], ["description", "Na dojazdy"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Normand Dagenais"], ["amoung", 2001.0], ["date", Sat, 13 Aug 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otilia Seller"], ["amoung", 4577.0], ["date", Sun, 14 Aug 2016], ["description", "Na kino"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Argentina Junior"], ["amoung", 168.0], ["date", Mon, 15 Aug 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earle Galindez"], ["amoung", 984.0], ["date", Tue, 16 Aug 2016], ["description", "Na kosmetyki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Golda Orndorff"], ["amoung", 1910.0], ["date", Wed, 17 Aug 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gina Grippo"], ["amoung", 1411.0], ["date", Thu, 18 Aug 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pok Macfarlane"], ["amoung", 4668.0], ["date", Fri, 19 Aug 2016], ["description", "Na alkohol"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delilah Muszynski"], ["amoung", 2352.0], ["date", Sat, 20 Aug 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salina Stupka"], ["amoung", 4380.0], ["date", Sun, 21 Aug 2016], ["description", "Na gry"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Celeste Petre"], ["amoung", 2581.0], ["date", Mon, 22 Aug 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audrie Aubry"], ["amoung", 1073.0], ["date", Tue, 23 Aug 2016], ["description", "Na używki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Goettl"], ["amoung", 4769.0], ["date", Wed, 24 Aug 2016], ["description", "Na książki"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cathie Hearon"], ["amoung", 4147.0], ["date", Thu, 25 Aug 2016], ["description", "Na rower"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "loans" ("name", "amoung", "date", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reed Kelsch"], ["amoung", 4783.0], ["date", Fri, 26 Aug 2016], ["description", "Na komputer"], ["created_at", 2017-04-21 21:31:37 UTC], ["updated_at", 2017-04-21 21:31:37 UTC], ["user_id", 1]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2017-04-21 23:35:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 52ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-21 23:35:33 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 611ms (Views: 572.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-21 23:35:53 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XfBaUJmCKz3166eBzElZ3B94LEFuVvLRuN6UuS5ZdC246HmMgvRSL68+mG4abdp016FrVX2wVWuRCR6LIvnh7g==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.3ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 237ms (Views: 153.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-21 23:35:58 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nitT41oi4v9mFIfmYnUE7fFE9s71pRUXaYufE5IS0f97M3A/QVSb7TzBuAm0UYdFOZ2x2uZDsq1AXBUhnrJEPA==", "email"=>"test", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.1ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 156ms (Views: 151.9ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2017-04-21 23:40:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-21 23:40:50 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 432ms (Views: 414.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-21 23:41:03 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7TlNPcSzQhZTkf1bK2dVrbvkT+a3OKyEXYxAfvbeOM8IIW7h38U7BAlEwrT9Q9YFcz0I8qTeCz50W8pM+n6tDA==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.8ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 220ms (Views: 137.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-21 23:41:11 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lU1D8XG9vkp7PQSuZzPwWEyJan3YgIXsCH28GW5hMQNwVWAtasvHWCHoO0GxF3PwhFAtactmIlYhqjYrYsGkwA==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.3ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 232ms (Views: 154.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-21 23:41:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCNgT7VWt4Rs1rbdB3f3AlCHPaO7sthd3Hm+j/FSlkLNO0OTriDOljYDiTLRU3SqmF56t6hUf+f1rjS9/fIDgQ==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-21 23:41:16 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (37.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.5ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 230ms (Views: 194.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/loans/104/edit" for ::1 at 2017-04-21 23:41:33 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (44.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.8ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 270ms (Views: 215.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/loans/4/edit" for ::1 at 2017-04-21 23:42:44 +0200
+Processing by LoansController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering loans/edit.html.erb within layouts/application
+  Rendered loans/edit.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 240ms (Views: 206.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/loans/181" for ::1 at 2017-04-21 23:43:08 +0200
+Processing by LoansController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Un6le8wIgTAWBokulM0cytnLp0YE5bTpDJNHO4Jzxs63Zoan1374IkzTtsFC6Z9iERLgUhcDE1MlRM0JjtNTDQ==", "id"=>"181"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (1.4ms)[0m  [1m[34mSELECT  "loans".* FROM "loans" WHERE "loans"."id" = ? LIMIT ?[0m  [["id", 181], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "loans" WHERE "loans"."id" = ?[0m  [["id", 181]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-21 23:43:08 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (55.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (4.8ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 367ms (Views: 326.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/logout" for ::1 at 2017-04-21 23:43:38 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-21 23:43:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-21 23:43:39 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (4.1ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 205ms (Views: 172.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 13:42:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 42ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 13:42:53 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.9ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 1113ms (Views: 1083.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 13:43:13 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yExL0E/ndggSB3MSe1I3jrXPqIn/T49eBG13pL9xHQGyEj+9tbERrKwcJXWW/BSfOmPyBKtwXMEP5dv4zE125g==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 13:43:13 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (30.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.2ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 198ms (Views: 159.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:02:44 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (15.6ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (62.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 902ms (Views: 832.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/logout" for ::1 at 2017-04-22 14:03:02 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:03:02 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 14:03:02 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 201ms (Views: 171.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 14:03:08 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IviYsTq/sGFvl4+zkmB8pVwr6M5ACIRtELXe2Lg2lMbHPedNiYjXHQ7rJORXBFvCta3jhs8N0d7gvRDSm8W5ug==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:03:09 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (2.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (29.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 226ms (Views: 200.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:09:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (163.4ms)
+Completed 500 Internal Server Error in 290ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_path' for #<#<Class:0x472ef18>:0x4725e40>):
+    1: 	<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    2: 	<%= text_field_tag :search, params[:search], placeholder: "Wyszukaj dłużnika" %>
+    3: 	<%= submit_tag "Szukaj" %>
+    4: 	<% end %>
+  
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___292486704_37339524'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (988.3ms)
+Started GET "/" for ::1 at 2017-04-22 14:12:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (135.4ms)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `loans' for #<#<Class:0x466ccb0>:0x3fdc0f8>):
+    1: 	<%= form_tag(loans, :method => "get", id: "search-form") do %>
+    2: 	<%= text_field_tag :search, params[:search], placeholder: "Wyszukaj dłużnika" %>
+    3: 	<%= submit_tag "Szukaj" %>
+    4: 	<% end %>
+  
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb___573908885_36924288'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (831.4ms)
+Started GET "/" for ::1 at 2017-04-22 14:14:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (152.4ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0x46b1008>:0x46a89e0>):
+    1: 	<%= form_tag(index, :method => "get", id: "search-form") do %>
+    2: 	<%= text_field_tag :search, params[:search], placeholder: "Wyszukaj dłużnika" %>
+    3: 	<%= submit_tag "Szukaj" %>
+    4: 	<% end %>
+  
+app/views/credits/index.html.erb:1:in `_app_views_credits_index_html_erb__982244860_37064172'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (754.1ms)
+Started GET "/" for ::1 at 2017-04-22 14:23:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (44.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 403ms (Views: 355.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/loans?utf8=%E2%9C%93&search=Cathie&commit=Szukaj" for ::1 at 2017-04-22 14:23:45 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for LoansController):
+  
+actionpack (5.0.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `call'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/" for ::1 at 2017-04-22 14:24:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (45.2ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 403ms (Views: 360.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Cathie&commit=Szukaj" for ::1 at 2017-04-22 14:25:10 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Cathie", "commit"=>"Szukaj"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Cathie%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (6.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 161ms (Views: 139.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Cathie&commit=Szukaj" for ::1 at 2017-04-22 14:30:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Cathie", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Cathie%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (21.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (1.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 414ms (Views: 369.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:30:29 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (37.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 207ms (Views: 186.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&commit=Szukaj" for ::1 at 2017-04-22 14:30:31 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (15.6ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (37.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 200ms (Views: 159.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&commit=Szukaj" for ::1 at 2017-04-22 14:32:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (53.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 416ms (Views: 368.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&commit=Szukaj" for ::1 at 2017-04-22 14:33:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (53.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (15.6ms)
+Completed 200 OK in 416ms (Views: 352.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=dupa&commit=Szukaj" for ::1 at 2017-04-22 14:35:13 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dupa", "commit"=>"Szukaj"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%dupa%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 156.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&commit=Szukaj" for ::1 at 2017-04-22 14:35:18 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (31.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.5ms)
+Completed 200 OK in 194ms (Views: 172.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&commit=Szukaj" for ::1 at 2017-04-22 14:47:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (49.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (15.6ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 400ms (Views: 354.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=+Rupert&commit=Szukaj" for ::1 at 2017-04-22 14:47:23 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>" Rupert", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.5ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '% Rupert%') ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 185ms (Views: 151.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Cathie&commit=Szukaj" for ::1 at 2017-04-22 14:47:36 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Cathie", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Cathie%') ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Cathie%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (15.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 143.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:47:41 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (44.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 204ms (Views: 183.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Rupert&commit=Szukaj" for ::1 at 2017-04-22 14:47:50 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Rupert", "commit"=>"Szukaj"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Rupert%') ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Rupert%') AND "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (9.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.3ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 174ms (Views: 153.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Rupertaa&commit=Szukaj" for ::1 at 2017-04-22 14:47:57 +0200
+Processing by CreditsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Rupertaa", "commit"=>"Szukaj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE (name LIKE '%Rupertaa%') ORDER BY "loans"."created_at" DESC[0m
+  Rendered credits/index.html.erb within layouts/application (4.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.5ms)
+  Rendered credits/_new_credit_form.html.erb (0.5ms)
+Completed 200 OK in 156ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-04-22 14:48:38 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:48:38 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 14:48:38 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 156ms (Views: 138.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 14:56:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (15.6ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 370ms (Views: 334.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 14:57:06 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (15.6ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 354ms (Views: 326.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 14:57:26 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yxb2fNS7n4PZJriEjNCW2rwW62L2bDCcTLv3J/G5cMwZSIIRLu34J2c97uNhfrXLM7qx76JT4wNHM1t7goUbKw==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:57:26 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (0.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (46.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (0.0ms)
+  Rendered credits/_new_credit_form.html.erb (0.0ms)
+Completed 200 OK in 201ms (Views: 185.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-04-22 14:57:38 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 14:57:38 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 14:57:38 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 165ms (Views: 147.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:10:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:10:11 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (104.0ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x4642470>:0x4639260>):
+    1: <h1>Logowanie</h1>
+    2: 
+    3: <div id="error_explanation">
+    4:   <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    5:   <ul>
+    6:     <% user.errors.full_messages.each do |message| %>
+    7:       <li><%= message %></li>
+  
+app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb___934593642_36837936'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (789.4ms)
+Started GET "/" for ::1 at 2017-04-22 15:33:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 26ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:33:30 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (106.2ms)
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x4633398>:0x4623120>):
+    1: <h1>Logowanie</h1>
+    2: 
+    3: <div id="error_explanation">
+    4:   <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    5:   <ul>
+    6:     <% session.errors.full_messages.each do |message| %>
+    7:       <li><%= message %></li>
+  
+app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb___449801691_36815340'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (842.8ms)
+Started GET "/login" for ::1 at 2017-04-22 15:33:55 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (41.1ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<ActionDispatch::Request::Session:0x73b168>):
+    1: <h1>Logowanie</h1>
+    2: 
+    3: <div id="error_explanation">
+    4:   <h2><%= pluralize(session.errors.count, "error") %> prohibited this user from being saved:</h2>
+    5:   <ul>
+    6:     <% session.errors.full_messages.each do |message| %>
+    7:       <li><%= message %></li>
+  
+app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb___449801691_66175164'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (771.5ms)
+Started GET "/" for ::1 at 2017-04-22 15:53:19 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:53:28 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 342ms (Views: 320.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 15:53:52 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K6T2WE4jLUWBrwpgdesvEihrkrq/E2+S/Qe+eAYhAHBR+oI1tHVK4T+0XAeYRQwDp8fIN+ssvA32jxIkdR1rlw==", "email"=>"klklkl", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "klklkl"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 151ms (Views: 144.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 15:54:13 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l9yXQDqdi2KlFjHyR6PpYkOZDBrP9LAnR6raDYIFwgvtguMtwMvsxhsNZ5WqDcpzzDVWl5vLY7hMInZR8Tmp7A==", "email"=>"fdfd", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fdfd"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (2.0ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 161ms (Views: 160.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2017-04-22 15:54:24 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OXwE+qrvDmmv3UuANQ/cnk+HrSgxeVQo/ByPzKbGXUJDInCXULlpzRHGHefYof+PwCv3pWVGh7f3lCOQ1fo2pQ==", "email"=>"kgniazdowski1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Zaloguj"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kgniazdowski1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:54:24 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering credits/index.html.erb within layouts/application
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" ORDER BY "loans"."created_at" DESC[0m
+  [1m[36mLoan Load (1.0ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."user_id" = ? ORDER BY "loans"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered credits/index.html.erb within layouts/application (43.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.0ms)
+  Rendered credits/_new_credit_form.html.erb (2.0ms)
+Completed 200 OK in 220ms (Views: 193.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/logout" for ::1 at 2017-04-22 15:54:27 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:54:27 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:54:27 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered credits/_navbar.html.erb (3.9ms)
+  Rendered credits/_new_credit_form.html.erb (1.0ms)
+Completed 200 OK in 165ms (Views: 146.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:54:57 +0200
+  
+SyntaxError (C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:11: syntax error, unexpected ':', expecting keyword_end
+      notice: 'Niepoprawny email lub hasło'
+             ^):
+  
+app/controllers/sessions_controller.rb:11: syntax error, unexpected ':', expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (794.3ms)
+Started GET "/login" for ::1 at 2017-04-22 15:57:51 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `login' for #<SessionsController:0x4881e70>):
+  
+app/controllers/sessions_controller.rb:4:in `new'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (836.1ms)
+Started GET "/login" for ::1 at 2017-04-22 15:58:20 +0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/application_controller.rb:3)
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:SessionsController> at C:/Users/kgnia/Documents/Studia/Rails/mywallet/app/controllers/sessions_controller.rb:2)
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:39 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by CreditsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-22 15:58:40 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+

@@ -1,11 +1,13 @@
 <h1>Logowanie</h1>
 
+<p id="notice"><%= notice %></p>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 	<%= form_tag sessions_path do %>
 		<%= label_tag :email %>
 		<%= text_field_tag(name = "email", value = nil, options = { class: 'form-control' }) %><br>
-    	<%= label_tag :password %>
+    	<%= label_tag :Hasło %>
 		<%= password_field_tag(name = "password", value = nil, options = {class: 'form-control'}) %><br>
     	<%= submit_tag "Zaloguj", class: "btn btn-primary" %><br><br>
     	Nie masz jeszcze konta?
