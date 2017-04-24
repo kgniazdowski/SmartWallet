@@ -1,7 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SmartWallet jest aplikacją, która pomaga kontrolować pożyczane pieniądze. Zarejestrowany użytkownik może wprowadzać pożyczki podająć imię osoby, której pożycza, kwotę, date itd. Dzięki liście wszystkich pożyczek z możliwością filtracji kontrolaportfela jest o wiele prostsza.
+
+|Ruby |Rails|             Baza danych             |Framework|
+|:---:|:---:|                :---:                |  :---:  |
+|2.2.6|5.0.2| Lokalnie: SQLite, Heroku: PostgreSQL|Bootstrap|
 
 Things you may want to cover:
 
