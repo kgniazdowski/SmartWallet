@@ -1,6 +1,6 @@
-# README
-
-SmartWallet jest aplikacją, która pomaga kontrolować pożyczane pieniądze. Zarejestrowany użytkownik może wprowadzać pożyczki podająć imię osoby, której pożycza, kwotę, date itd. Dzięki liście wszystkich pożyczek z możliwością filtracji kontrolaportfela jest o wiele prostsza.
+# Kamil Gniazdowski
+[SmartWallet](https://http://smart-wallet.herokuapp.com/)
+SmartWallet jest aplikacją, która pomaga kontrolować pożyczane pieniądze. Zarejestrowany użytkownik może wprowadzać pożyczki podająć imię osoby, której pożycza, kwotę itp. Dzięki liście wszystkich pożyczek z możliwością filtracji kontrola portfela jest o wiele prostsza.
 
 |Ruby |Rails|             Baza danych             |Framework|
 |:---:|:---:|                :---:                |  :---:  |
