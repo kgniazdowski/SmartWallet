@@ -1,6 +1,10 @@
 # Kamil Gniazdowski
 [SmartWallet](http://smart-wallet.herokuapp.com/)
  jest aplikacją, która pomaga kontrolować pożyczane pieniądze. Zarejestrowany użytkownik może wprowadzać pożyczki podająć imię osoby, której pożycza, kwotę itp. Dzięki liście wszystkich pożyczek z możliwością filtracji kontrola portfela jest o wiele prostsza.
+ 
+Dane do konta, które posiada wygenerowane pożyczki:
+* email: testowy@test.com
+* hasło: test
 
 |Ruby |Rails|             Baza danych             |Framework|
 |:---:|:---:|                :---:                |  :---:  |
